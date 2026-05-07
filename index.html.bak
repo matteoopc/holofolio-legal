@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holofolio</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 40px auto; padding: 20px; color: #1c1c1e; background: #fafafa; line-height: 1.6; text-align: center; }
+h1 { color: #34c759; font-size: 2.4rem; }
+.subtitle { color: #6e6e73; font-size: 1.1rem; margin-bottom: 32px; }
+a { color: #007aff; text-decoration: none; padding: 12px 20px; border: 1px solid #d1d1d6; border-radius: 8px; display: inline-block; margin: 6px; background: white; }
+a:hover { background: #f0f0f0; }
+.card { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.contact { color: #6e6e73; font-size: 14px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Holofolio</h1>
+<p class="subtitle">La tua collezione di carte Pokémon, sempre in tasca.</p>
+<p>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Termini di Servizio</a>
+</p>
+<p class="contact">Contatti: <a href="mailto:matteoopc@hotmail.it" style="border:none;padding:0;background:none">matteoopc@hotmail.it</a></p>
+</div>
+</body>
+</html>
