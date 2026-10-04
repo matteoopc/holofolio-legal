@@ -18,7 +18,7 @@ a { color: #007aff; text-decoration: none; }
 <div class="card">
 <p><a href="index.html">&larr; Home</a></p>
 <h1>Privacy Policy</h1>
-<p class="meta">Ultimo aggiornamento: 12 maggio 2026 (modello local-first)</p>
+<p class="meta">Ultimo aggiornamento: 4 ottobre 2026 (diagnostica anonima propria, tolto Sentry)</p>
 
 <h2>1. Introduzione</h2>
 <p>Holofolio &egrave; un'applicazione iOS sviluppata da Matteo Baitelli ("noi") per la gestione di collezioni di carte Pok&eacute;mon. Questa Privacy Policy descrive quali dati l'app tratta e come, distinguendo l'uso <strong>senza account</strong> dall'uso con <strong>Premium</strong>.</p>
@@ -63,11 +63,11 @@ a { color: #007aff; text-decoration: none; }
 <p>Apri <strong>Profilo &rarr; Elimina account</strong> direttamente dall'app: cancelliamo definitivamente tutti i dati associati al tuo account (collezione, wishlist, sottoscrizioni notifiche, cronologia). Lo storage locale del dispositivo viene anch'esso ripulito al primo logout/uninstall.</p>
 <p>In alternativa, scrivici a <a href="mailto:matteoopc@hotmail.it">matteoopc@hotmail.it</a> dall'email del tuo account per cancellazione manuale.</p>
 
-<h2>7. Crash reports e analitica (Sentry)</h2>
-<p>L'app utilizza <strong>Sentry</strong> per il monitoraggio dei crash. Quando l'app si chiude inaspettatamente, viene inviata una segnalazione anonima con: stack trace, versione iOS, modello dispositivo, ID dispositivo Sentry casuale. <strong>Nessun dato della tua collezione, della tua email o di altri dati personali</strong> viene incluso. Questo serve solo a permetterci di sistemare i bug.</p>
+<h2>7. Diagnostica anonima di crash e blocchi</h2>
+<p>Se l'app si chiude all'improvviso o resta bloccata per pi&ugrave; di 2 secondi, invia al <strong>nostro server</strong> un rapporto tecnico: versione dell'app, modello di dispositivo, versione di iOS, schermata in cui &egrave; successo e i dati tecnici del crash forniti da iOS (MetricKit). <strong>Non contiene</strong> il tuo nome, la tua email, la tua collezione, screenshot, n&eacute; il tuo indirizzo IP; <strong>non &egrave; collegato al tuo account</strong>, non serve per pubblicit&agrave; o tracciamento e non viene condiviso con terzi. I rapporti sono accessibili al solo sviluppatore, servono solo a correggere i bug e vengono cancellati dopo 90 giorni. Per i dispositivi in TestFlight Apple pu&ograve; inoltre mettere a disposizione dello sviluppatore i crash e i commenti inviati dai tester.</p>
 
 <h2>8. Condivisione con terzi</h2>
-<p><strong>Non vendiamo n&eacute; condividiamo</strong> i tuoi dati con terzi a fini di marketing. I dati premium sono trattati solo da noi sui nostri server, accessibili al solo sviluppatore. I servizi tecnici terzi sopra elencati (Apple StoreKit, Google Gemini, TCGdex, Sentry) ricevono solo i dati minimi necessari al loro funzionamento.</p>
+<p><strong>Non vendiamo n&eacute; condividiamo</strong> i tuoi dati con terzi a fini di marketing. I dati premium sono trattati solo da noi sui nostri server, accessibili al solo sviluppatore. I servizi tecnici terzi sopra elencati (Apple StoreKit, Google Gemini, TCGdex) ricevono solo i dati minimi necessari al loro funzionamento.</p>
 
 <h2>9. Sicurezza</h2>
 <p>I dati sui nostri server sono archiviati in un database SQLite con accesso protetto, su un server gestito da noi. Le password (per l'utenza web app legacy) sono memorizzate solo come hash crittografico PBKDF2-SHA256. Le sessioni utilizzano cookie HttpOnly su HTTPS.</p>
