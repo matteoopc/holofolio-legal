@@ -18,10 +18,10 @@ a { color: #007aff; text-decoration: none; }
 <div class="card">
 <p><a href="index.html">&larr; Home</a></p>
 <h1>Privacy Policy</h1>
-<p class="meta">Ultimo aggiornamento: 4 ottobre 2026 (diagnostica anonima di crash e blocchi)</p>
+<p class="meta">Ultimo aggiornamento: 20 ottobre 2026 (avvisi, riconoscimento carte solo sui nostri server)</p>
 
 <h2>1. Introduzione</h2>
-<p>Holofolio &egrave; un'applicazione iOS sviluppata da Matteo Baitelli ("noi") per la gestione di collezioni di carte Pok&eacute;mon. Questa Privacy Policy descrive quali dati l'app tratta e come, distinguendo l'uso <strong>senza account</strong> dall'uso con <strong>Premium</strong>.</p>
+<p>Holofolio &egrave; un'applicazione iOS sviluppata da Matteo Baitelli ("noi") per la gestione di collezioni di carte collezionabili (TCG). Questa Privacy Policy descrive quali dati l'app tratta e come, distinguendo l'uso <strong>senza account</strong> dall'uso con <strong>Premium</strong>.</p>
 
 <div class="box"><strong>In sintesi:</strong> senza login non raccogliamo nulla. Tutto resta sul tuo dispositivo. Quando attivi Premium (acquisto in-app), sblocchi la sincronizzazione e in quel caso i dati passano dai nostri server.</div>
 
@@ -30,21 +30,21 @@ a { color: #007aff; text-decoration: none; }
 <ul>
   <li><strong>Tutti i dati della tua collezione</strong> (carte aggiunte, wishlist, preferenze) sono salvati <strong>esclusivamente sul tuo dispositivo</strong>, in un archivio locale (AsyncStorage). Non lasciano mai il telefono.</li>
   <li>Se reinstalli l'app o cambi dispositivo, questi dati locali andranno persi (a meno che non attivi Premium con la sincronizzazione).</li>
-  <li><strong>Nessun nome, email, identificativo personale</strong> viene raccolto, salvato sui nostri server, o condiviso con terzi.</li>
+  <li><strong>Nessun nome, email o identificativo personale</strong> viene raccolto. Le richieste ai nostri server portano solo un codice casuale generato dall'app (vedi sezione 3). Se attivi gli avvisi sui prezzi o le notifiche delle nuove uscite senza account, il server conserva il codice di notifica del dispositivo, gli id delle carte o dei set che segui e le soglie che hai scelto, senza collegarli a una persona.</li>
 </ul>
 
 <h2>3. Servizi che vengono contattati dal tuo dispositivo</h2>
 <p>Per fornire il catalogo carte aggiornato e il riconoscimento via fotocamera, l'app contatta direttamente i seguenti servizi dal tuo dispositivo:</p>
 <ul>
-  <li><strong>I nostri server</strong> (su VPS in Olanda) per ottenere il catalogo carte aggiornato, i prezzi Cardmarket, le nuove uscite italiane. Le richieste sono anonime: inviamo solo un ID di dispositivo casuale (UUID generato sull'app, non legato al tuo Apple ID o a dati personali) per limitare l'abuso dello scanner. Non registriamo log permanenti delle ricerche.</li>
-  <li><strong>Google Gemini Vision API</strong> per il riconoscimento delle carte tramite foto. Quando usi lo scanner, l'immagine viene inviata in tempo reale tramite i nostri server alla API di Gemini. <strong>L'immagine non viene salvata</strong> n&eacute; da noi n&eacute; da Google in modo persistente: viene usata solo per identificare la carta e poi scartata. Il limite gratuito &egrave; di 3 scansioni al giorno per dispositivo.</li>
+  <li><strong>I nostri server</strong> (su VPS in Olanda) per ottenere il catalogo carte aggiornato, i prezzi Cardmarket, le nuove uscite italiane. Le richieste sono anonime: inviamo solo un ID di dispositivo casuale (UUID generato sull'app, non legato al tuo Apple ID o a dati personali) per limitare l'abuso dello scanner. Non conserviamo uno storico delle ricerche.</li>
+  <li><strong>Riconoscimento con la fotocamera</strong> di carte, pagine di raccoglitore e scontrini (funzione Premium): il testo viene letto prima sul tuo dispositivo e al nostro server arriva solo quel testo. Se non basta, la foto di una carta o di uno scontrino viene inviata al server di Holofolio, che la legge con i propri strumenti e <strong>non la conserva</strong>. Le foto non vengono inviate a servizi di terzi.</li>
   <li><strong>TCGdex</strong> (tcgdex.dev) per le immagini ufficiali e i metadati delle carte (lingue, set, varianti). Nessun identificativo viene trasmesso.</li>
 </ul>
 
 <h2>4. Acquisti in-app e Sign in (Premium)</h2>
 <p>Holofolio offre due abbonamenti opzionali Premium (mensile e annuale) gestiti tramite il framework StoreKit 2 di Apple:</p>
 <ul>
-  <li>La transazione di pagamento avviene <strong>interamente attraverso Apple e il tuo Apple ID</strong>. Apple gestisce il pagamento, l'emissione della ricevuta, eventuali rimborsi. Noi non riceviamo il tuo metodo di pagamento, n&eacute; il tuo nome, n&eacute; alcun dato personale relativo alla transazione.</li>
+  <li>La transazione di pagamento avviene <strong>interamente attraverso Apple e il tuo Apple ID</strong>. Apple gestisce il pagamento, l'emissione della ricevuta, eventuali rimborsi. Noi non riceviamo il tuo metodo di pagamento n&eacute; il tuo nome. Per riconoscere il tuo abbonamento, l'app invia al nostro server l'identificativo del prodotto e della transazione Apple (la ricevuta firmata), che verifichiamo con Apple.</li>
   <li>Per attivare Premium devi accedere via <strong>Sign in with Apple</strong> oppure <strong>Sign in with Google</strong>. Solo a questo punto creiamo un account sui nostri server.</li>
 </ul>
 
@@ -57,6 +57,7 @@ a { color: #007aff; text-decoration: none; }
   <li><strong>La tua collezione e wishlist</strong>: vengono sincronizzate tra i tuoi dispositivi attraverso i nostri server, e backup automaticamente. Comprende: card_id, variante, quantit&agrave;, condizione, note, prezzo di acquisto, data di aggiunta.</li>
   <li><strong>Cronologia notifiche</strong> e <strong>token push APNs</strong> se hai attivato le notifiche.</li>
   <li><strong>Cronologia valori della collezione</strong> per calcolare il grafico del valore nel tempo.</li>
+  <li><strong>Avvisi sui prezzi e sulle nuove uscite</strong>: gli id delle carte e dei set che segui, il prezzo obiettivo che hai scelto e il codice di notifica del dispositivo. Si cancellano dall'app quando togli l'avviso o disattivi le notifiche, e con l'eliminazione dell'account.</li>
 </ul>
 
 <h2>6. Come cancellare account e dati</h2>
@@ -67,7 +68,7 @@ a { color: #007aff; text-decoration: none; }
 <p>Se l'app si chiude all'improvviso o resta bloccata per pi&ugrave; di 2 secondi, invia al <strong>nostro server</strong> un rapporto tecnico: versione dell'app, modello di dispositivo, versione di iOS, schermata in cui &egrave; successo e i dati tecnici del crash forniti da iOS (MetricKit). <strong>Non contiene</strong> il tuo nome, la tua email, la tua collezione, screenshot, n&eacute; il tuo indirizzo IP; <strong>non &egrave; collegato al tuo account</strong>, non serve per pubblicit&agrave; o tracciamento e non viene condiviso con terzi. I rapporti sono accessibili al solo sviluppatore, servono solo a correggere i bug e vengono cancellati dopo 90 giorni. Per i dispositivi in TestFlight Apple pu&ograve; inoltre mettere a disposizione dello sviluppatore i crash e i commenti inviati dai tester.</p>
 
 <h2>8. Condivisione con terzi</h2>
-<p><strong>Non vendiamo n&eacute; condividiamo</strong> i tuoi dati con terzi a fini di marketing. I dati premium sono trattati solo da noi sui nostri server, accessibili al solo sviluppatore. I servizi tecnici terzi sopra elencati (Apple StoreKit, Google Gemini, TCGdex) ricevono solo i dati minimi necessari al loro funzionamento.</p>
+<p><strong>Non vendiamo n&eacute; condividiamo</strong> i tuoi dati con terzi a fini di marketing. I dati premium sono trattati solo da noi sui nostri server, accessibili al solo sviluppatore. I servizi tecnici terzi sopra elencati (Apple StoreKit, TCGdex) ricevono solo i dati minimi necessari al loro funzionamento.</p>
 
 <h2>9. Sicurezza</h2>
 <p>I dati sui nostri server sono archiviati in un database SQLite con accesso protetto, su un server gestito da noi. Le password (per l'utenza web app legacy) sono memorizzate solo come hash crittografico PBKDF2-SHA256. Le sessioni utilizzano cookie HttpOnly su HTTPS.</p>
